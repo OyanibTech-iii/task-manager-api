@@ -34,22 +34,23 @@ class Task
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['category:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-        // #[Groups(['category:read', 'category:write'])]
-    private ?string $taskt_Title = null;
+    #[Groups(['category:read', 'category:write'])]
+    private ?string $tasktTitle = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    // #[Groups(['category:read', 'category:write'])]
-    private ?string $task_decription = null;
+    #[Groups(['category:read', 'category:write'])]
+    private ?string $taskDescription = null;
 
     #[ORM\Column]
-    // #[Groups(['task:read', 'task:write'])]
+    #[Groups(['category:read', 'category:write'])]
     private ?bool $isCompleted = null;
 
     #[ORM\Column]
-    // #[Groups(['task:read'])]
+    #[Groups(['category:read', 'category:write'])]
     private ?\DateTimeImmutable $createdAt = null;
 
     public function getId(): ?int
@@ -59,24 +60,24 @@ class Task
 
     public function getTasktTitle(): ?string
     {
-        return $this->taskt_Title;
+        return $this->tasktTitle;
     }
 
-    public function setTasktTitle(string $taskt_Title): static
+    public function setTasktTitle(string $tasktTitle): static
     {
-        $this->taskt_Title = $taskt_Title;
+        $this->tasktTitle = $tasktTitle;
 
         return $this;
     }
 
-    public function getTaskDecription(): ?string
+    public function getTaskDescription(): ?string
     {
-        return $this->task_decription;
+        return $this->taskDescription;
     }
 
-    public function setTaskDecription(string $task_decription): static
+    public function setTaskDescription(string $taskDescription): static
     {
-        $this->task_decription = $task_decription;
+        $this->taskDescription = $taskDescription;
 
         return $this;
     }
