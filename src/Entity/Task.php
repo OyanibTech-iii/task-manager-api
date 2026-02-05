@@ -2,11 +2,33 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\TaskRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Metadata\Put;
+use ApiPlatform\Metadata\Delete;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity(repositoryClass: TaskRepository::class)]
+#[ApiResource(
+    operations: [
+        new Get(),
+        new GetCollection(),
+        new Post(),
+        new Put(),
+        new Delete()
+    ],
+    normalizationContext: [
+        'groups' => ['category:read']
+    ],
+    denormalizationContext: [
+        'groups' => ['category:write']
+    ]
+)]
 class Task
 {
     #[ORM\Id]
@@ -15,15 +37,19 @@ class Task
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+        // #[Groups(['category:read', 'category:write'])]
     private ?string $taskt_Title = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    // #[Groups(['category:read', 'category:write'])]
     private ?string $task_decription = null;
 
     #[ORM\Column]
+    // #[Groups(['task:read', 'task:write'])]
     private ?bool $isCompleted = null;
 
     #[ORM\Column]
+    // #[Groups(['task:read'])]
     private ?\DateTimeImmutable $createdAt = null;
 
     public function getId(): ?int
