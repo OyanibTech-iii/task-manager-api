@@ -72,12 +72,13 @@ curl -X 'POST' \
   -H 'accept: application/ld+json' \
   -H 'Content-Type: application/ld+json' \
   -d '{
-  "taskTitle": "Submit Web Development Project",
-  "taskDescription": "Submit the Growfico project to the instructor at NORSU.",
+  "taskTitle": "e.g TestingUgAPI",
+  "taskDescription": "Basta Description na dire",
   "isCompleted": false,
   "createdAt": "2026-02-05T09:00:00+00:00"
 }'
 ```
+<div align="center">
 
 ### 3. Data Schema
 
@@ -102,6 +103,7 @@ curl -X 'POST' \
 
 ---
 
+<div>
 ## Troubleshooting
 
 <details>
