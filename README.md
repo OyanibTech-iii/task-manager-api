@@ -1,8 +1,9 @@
 <div align="center">
+<img src="TMA logo.png" width="200" height="200" alt="Logo" />
 
 # Task Manager API
-
 ### A RESTful API built with Symfony and API Platform for managing tasks
+
 
 ---
 
