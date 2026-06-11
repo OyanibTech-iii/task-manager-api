@@ -4,6 +4,10 @@
 # Task Manager API
 ### A RESTful API built with Symfony and API Platform for managing tasks
 
+[![Symfony](https://img.shields.io/badge/Symfony-7.4-000000?style=for-the-badge&logo=symfony)](https://symfony.com/)
+[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net/)
+[![Twig](https://img.shields.io/badge/Twig-3.x-000000?style=for-the-badge&logo=twig)](https://twig.symfony.com/)
+[![License](https://img.shields.io/badge/License-Proprietary-orange?style=for-the-badge)](#license)
 
 ---
 
